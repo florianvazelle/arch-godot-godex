@@ -3,14 +3,14 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "arch"
-    config.vm.define "arch-godex"
+    config.vm.define "arch-godot-godex"
   
     # Share an additional folder to the guest VM.
     config.vm.synced_folder "./data", "/vagrant_data"
   
     # Provider-specific configuration.
     config.vm.provider "virtualbox" do |vb|
-      # Don't display the VirtualBox GUI when booting the machine
+      # Display the VirtualBox GUI when booting the machine
       vb.gui = true
     
       # Customize the amount of memory on the VM:
@@ -27,7 +27,5 @@ Vagrant.configure("2") do |config|
     # Enable provisioning with a shell script.
     config.vm.provision "shell", inline: <<-SHELL
       pacman -Syu scons godot --noconfirm
-      cd /vagrant_data/godot
-      scons -j$(nproc) platform=linuxbsd target=debug custom_modules="../godex"
     SHELL
   end

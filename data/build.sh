@@ -1,0 +1,1 @@
+(cd godot && scons -j$(nproc) platform=linuxbsd target=debug custom_modules="../godex")

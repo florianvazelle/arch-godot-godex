@@ -1,7 +1,7 @@
 ## Install requirements
 
 ```
-sudo apt install virtualbox vagrant
+sudo apt install virtualbox vagrant packer
 ```
 
 ## Create an Arch Linux base box
@@ -16,7 +16,6 @@ cd ..
 ## Setup Godot with Godex
 
 ```
-mkdir -p data
 cd data/godot
 git apply ../godex/patches/add_custom_iterator.patch --reject --ignore-space-change --ignore-whitespace
 cd ../..
@@ -30,7 +29,9 @@ vagrant up --provision
 
 ## In VM
 
+Login with credential `vagrant/vagrant`, and run:
 ```
-cd /vagrant_data/godot
-./bin/godot.linuxbsd.tools.64
+cd /vagrant_data
+./build.sh
+./run.sh
 ```
