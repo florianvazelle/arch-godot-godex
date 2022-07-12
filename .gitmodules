@@ -1,0 +1,9 @@
+[submodule "packer-arch"]
+	path = packer-arch
+	url = git@github.com:elasticdog/packer-arch.git
+[submodule "data/godex"]
+	path = data/godex
+	url = git@github.com:florianvazelle/godex.git
+[submodule "data/godot"]
+	path = data/godot
+	url = git@github.com:godotengine/godot.git
